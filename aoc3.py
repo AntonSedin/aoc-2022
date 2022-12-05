@@ -6,7 +6,6 @@ s = set()
 with open("inputs/input3.txt") as f:
     for i, line in enumerate(f):
         line = line.strip()
-        print(line)
         mid = len(line)//2
         c = set(line[:mid]).intersection(line[mid:]).pop()
         if c.islower():
@@ -20,9 +19,7 @@ with open("inputs/input3.txt") as f:
         elif i % 3 == 1:
             s = s.intersection(line)
         else:
-            print(s.intersection(line))
             c = s.intersection(line).pop()
-            print(c)
             if c.islower():
                 prio = ord(c) - 96
                 badgepriosum += prio
